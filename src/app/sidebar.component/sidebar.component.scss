@@ -1,0 +1,49 @@
+:host {
+    min-width: 240px;
+    padding: 16px 0;
+
+    border-right: 1px solid #FFF;
+}
+
+ul {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    transition: background .3s ease;
+
+    &:hover {
+        background: rgba(0, 0, 0, .1);
+    }
+}
+
+li + li {
+    border-top: 1px solid #FFF;
+}
+
+a {
+    display: block;
+    padding: 12px 24px;
+
+    &.--active {
+        position: relative;
+
+        &::before {
+            content: '';
+
+            position: absolute;
+            top: 14px;
+            right: 20px;
+
+            width: 12px;
+            height: 12px;
+
+            border-top: 1px solid #FFF;
+            border-radius: 50%;
+            background: #0095ff;
+        }
+    }
+}

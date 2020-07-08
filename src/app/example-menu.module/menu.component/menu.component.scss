@@ -1,0 +1,36 @@
+:host {
+    z-index: 1000;
+    position: fixed;
+
+    display: block;
+
+    &.--overflow {
+        overflow-y: scroll;
+    }
+
+    &.--bottom-start {
+        margin-top: -5px;
+    }
+    &.--bottom-end {
+        margin-top: -5px;
+    }
+    &.--top-end {
+        margin-top: 5px;
+    }
+    &.--top-start {
+        margin-top: 5px;
+    }
+    &.--left-above {
+        margin-left: 5px;
+    }
+    &.--left-below {
+        margin-left: 5px;
+    }
+    &.--right-above {
+        margin-left: -5px;
+    }
+    &.--right-below {
+        margin-left: -5px;
+    }
+}
+

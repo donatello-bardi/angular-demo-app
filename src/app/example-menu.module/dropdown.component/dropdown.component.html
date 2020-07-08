@@ -1,0 +1,17 @@
+<button #ref class='btn' type='button' [class.--loading]='isLoading' [disabled]='disabled' (click)='onToggleView()'
+    aria-haspopup='true'
+    aria-controls='menu2'
+>
+    <span *ngIf='(value$ | async)'>{{ label$ | async }}</span>
+    <span *ngIf='(value$ | async) === null'>Hello button</span>
+</button>
+<app-menu *ngIf='isOpen' [parent]='ref' [position]='menuPosition'>
+    <ul role='menu' aria-labelledby='menubutton'>
+        <li *ngFor='let option of options; let i = index' role='none'>
+            <button type='button' role='menuitem' (click)='onChange(option.value);' [appAutofocus]='(value$ | async) === option.value'>
+                <i class='icon-{{ i+1 }}'></i>{{ option.label }}
+            </button>
+        </li>
+    </ul>
+</app-menu>
+<div class='spinner'></div>

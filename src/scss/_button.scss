@@ -1,0 +1,35 @@
+.btn {
+    position: relative;
+
+    padding: 12px 24px;
+
+    background: #323848;
+    border: 1px solid #0e1118;
+    border-radius: 5px;
+    outline: none;
+    opacity: 1;
+
+    cursor: pointer;
+    color: white;
+
+    transition: opacity .3s ease,
+                background .3s ease;
+
+    &:hover,
+    &:focus {
+        opacity: .8;
+    }
+
+    &:active {
+        opacity: 1;
+        background: #1b1e27;
+    }
+
+    // &:focus {
+    //     box-shadow: 0 0 0 2px #3c77ff;
+    // }
+
+    &[disabled]:not(.--loading) {
+        opacity: .4;
+    }
+}
