@@ -1,5 +1,5 @@
 // Angular dependencies.
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
     selector: 'app-sidebar',
@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
     styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
+    @HostListener('click', ['$event'])
+    onClick($event) {
+        $event.target.focus();
+    }
+
     constructor(
     ) {
     }
