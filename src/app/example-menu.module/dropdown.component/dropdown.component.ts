@@ -14,6 +14,8 @@ import {
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+const uid = () => Math.random().toString(16).substring(2);
+
 @Component({
     selector: 'app-dropdown',
     templateUrl: './dropdown.component.html',
@@ -25,6 +27,8 @@ import { map } from 'rxjs/operators';
     }]
 })
 export class DropdownComponent {
+    public id = uid();
+
     @HostBinding('class.--loading') _loading = false;
     @HostBinding('attr.disabled') disabled = false;
 

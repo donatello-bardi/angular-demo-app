@@ -12834,11 +12834,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("parent", _r0)("position", ctx_r3.menuPosition);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("id", "menu-", ctx_r3.id, "");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r3.options);
       }
     }
+
+    var uid = function uid() {
+      return Math.random().toString(16).substring(2);
+    };
 
     var DropdownComponent = /*#__PURE__*/function () {
       function DropdownComponent() {
@@ -12846,6 +12854,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _classCallCheck(this, DropdownComponent);
 
+        this.id = uid();
         this._loading = false;
         this.disabled = false;
         this.menuPosition = 'bottom-start';
@@ -13006,8 +13015,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         multi: true
       }])],
       decls: 8,
-      vars: 10,
-      consts: [["type", "button", "aria-haspopup", "true", "aria-controls", "menu2", 1, "btn", 3, "disabled", "click"], ["ref", ""], [4, "ngIf"], [3, "parent", "position", 4, "ngIf"], [1, "spinner"], [3, "parent", "position"], ["role", "menu", "aria-labelledby", "menubutton"], ["role", "none", 4, "ngFor", "ngForOf"], ["role", "none"], ["type", "button", "role", "menuitem", 3, "appAutofocus", "click"]],
+      vars: 11,
+      consts: [["type", "button", "attr.aria-haspopup", "true", 1, "btn", 3, "disabled", "click"], ["ref", ""], [4, "ngIf"], [3, "parent", "position", 4, "ngIf"], [1, "spinner"], [3, "parent", "position"], ["role", "menu", "aria-labelledby", "menubutton", 3, "id"], ["role", "none", 4, "ngFor", "ngForOf"], ["role", "none"], ["type", "button", "role", "menuitem", 3, "appAutofocus", "click"]],
       template: function DropdownComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 0, 1);
@@ -13026,7 +13035,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, DropdownComponent_app_menu_6_Template, 3, 3, "app-menu", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, DropdownComponent_app_menu_6_Template, 3, 4, "app-menu", 3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "div", 4);
         }
@@ -13034,15 +13043,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         if (rf & 2) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("--loading", ctx.isLoading);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattributeInterpolate1"]("aria-controls", "menu-", ctx.id, "");
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.disabled);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](3, 6, ctx.value$));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](3, 7, ctx.value$));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](5, 8, ctx.value$) === null);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](5, 9, ctx.value$) === null);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
