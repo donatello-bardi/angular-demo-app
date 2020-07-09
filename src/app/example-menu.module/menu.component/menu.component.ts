@@ -118,12 +118,17 @@ function calcPosition(position: string, hostRef: HTMLElement, childRef: HTMLElem
 
 function validatePosition(top: number, left: number, width: number, height: number) {
     const body = document.body.getBoundingClientRect();
+    const offsetTop = scrollTop();
 
     if (body.top > top || left < 0 || body.width < (left + width)) {
         throw new Error('Err');
     }
 
-    if (body.bottom < (top + height)) {
+    if ((body.bottom + offsetTop) < (top + height)) {
         throw new Error('Err');
     }
+}
+
+function scrollTop(): number {
+    return Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
 }
