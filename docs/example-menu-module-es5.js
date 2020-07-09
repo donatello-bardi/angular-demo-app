@@ -13686,14 +13686,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     function validatePosition(top, left, width, height) {
       var body = document.body.getBoundingClientRect();
+      var offsetTop = scrollTop();
 
       if (body.top > top || left < 0 || body.width < left + width) {
         throw new Error('Err');
       }
 
-      if (body.bottom < top + height) {
+      if (body.bottom + offsetTop < top + height) {
         throw new Error('Err');
       }
+    }
+
+    function scrollTop() {
+      return Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
     }
     /***/
 
